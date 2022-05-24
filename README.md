@@ -1,46 +1,23 @@
-# Getting Started with Create React App
+# Seneca Take Home Test
+A simple React application made with create-react-app which lets the user select from a list of answers to a prompted question. The project utilizes static typing with Typescript to make debugging easier (in my opinion it serves almost as a basic documentation for the codebase and makes it easier for new devs to understand the code as well) and styled components for styling to speed up development.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to Install and Run the project
+In the project directory, first run:
 
-## Available Scripts
+### npm install
+to install all the dependencies the project needs.
+Then you can run:
 
-In the project directory, you can run:
+### npm start
+to run the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+In case you want to bundle React in production mode (optimized build, minified, compressed files) run:
 
-### `npm start`
+### npm run build
+which builds the app for production to the build folder.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to Use the project
+It is very simple to use, the user tries to figure out and pick the right answers from the options below the quiz question. As it is just a small app to showcase a component and due to the limitations described below, currently the user can only answer to one question. The background gives a clue about how close the user is to selecting all the correct options. Once the correct answers are guessed, the screen locks and the app needs to be refreshed to unlock the screen.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Limitations
+This is not a fully fleshed out application by any means. It was mostly created to showcase a component and the logic needed to extract the selected values from said component and compare those with the actual answers. Right now the quiz data (answers, options, question) is just mock data, ideally this is something that we'd receive from a server and would need to handle it differently. Due to this we don't have any proper error handling in place. There are only 3 different background states defined currently, this wouldn't be helpful if we let's say had 10 answers (10X2 or 10X3 options) for a question. Additionally, the selected options on page load are randomized at the moment, as an extension to the current solution we should make sure that the correct answers are not picked randomly.
